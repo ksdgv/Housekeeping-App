@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Feedback Form</h2>
+<form method="post">
+  <div>
+    <label for="rating">Rating (1-5)</label>
+    <div id="rating">
+      {% for r in range(1,6) %}
+      <label style="display:inline; margin-right:8px;">
+        <input type="radio" name="rating" value="{{ r }}" required> {{ r }}
+      </label>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" rows="4" required></textarea>
+  </div>
+  <div class="actions">
+    <button type="submit" name="action" value="submit">Submit</button>
+    <a href="{{ url_for('home') }}" style="margin-left:8px;">Cancel</a>
+  </div>
+</form>
+{% endblock %}

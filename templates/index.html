@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome</h2>
+<p>Please choose an action:</p>
+<ul>
+  <li><a href="{{ url_for('feedback') }}">Provide Feedback</a></li>
+  <li><a href="{{ url_for('ticket') }}">Raise a Maintenance Ticket</a></li>
+</ul>
+{% endblock %}

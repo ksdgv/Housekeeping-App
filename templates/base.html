@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Housing Support</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header { margin-bottom: 1rem; }
+        .nav { margin-bottom: 1rem; }
+        form div { margin: 0.5rem 0; }
+        label { display:block; font-weight: 600; }
+        select, input[type=text], textarea { width: 300px; max-width: 100%; }
+        .actions button { margin-right: .5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Housing Feedback & Ticket System</h1>
+        <div class="nav">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+        <hr>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>

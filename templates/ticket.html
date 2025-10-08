@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Raise Maintenance Ticket</h2>
+<form method="post">
+  <div>
+    <label for="problem">Problem Description</label>
+    <textarea name="problem" id="problem" rows="4" required></textarea>
+  </div>
+  <div>
+    <label for="housing">Housing Block</label>
+    <select name="housing" id="housing" required>
+      <option value="" disabled selected>Select a block</option>
+      {% for block in housing_blocks %}
+        <option value="{{ block }}">{{ block }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="room">Room Number</label>
+    <input type="text" id="room" name="room" required />
+  </div>
+  <div>
+    <label for="time_available">Time Available (Optional)</label>
+    <input type="text" id="time_available" name="time_available" placeholder="e.g. 2-4 PM" />
+  </div>
+  <div class="actions">
+    <button type="submit" name="action" value="submit">Submit</button>
+    <a href="{{ url_for('home') }}" style="margin-left:8px;">Cancel</a>
+  </div>
+</form>
+{% endblock %}
